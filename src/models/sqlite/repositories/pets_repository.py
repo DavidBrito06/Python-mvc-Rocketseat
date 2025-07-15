@@ -1,13 +1,13 @@
 from typing import List
 from sqlalchemy.orm.exc import NoResultFound
 from src.models.sqlite.entites.pets import PetsTable
+from src.models.sqlite.interfaces.pets_repository import PetsRepositoryInterface
 
-
-class PetsRepository:
-    def __init__(self,db_connection):
+class PetsRepository(PetsRepositoryInterface):
+    def __init__(self, db_connection):
         self.__db_connection = db_connection
     
-    def list_pets(self) -> List:
+    def list_pets(self) -> List[PetsTable]:
         with self.__db_connection as database:
             try:
                 pets = database.session.query(PetsTable).all()

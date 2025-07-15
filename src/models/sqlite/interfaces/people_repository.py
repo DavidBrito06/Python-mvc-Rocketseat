@@ -1,0 +1,15 @@
+from abc import ABC, abstractmethod
+from src.models.sqlite.entites.people import PeopleTable
+
+
+class PeopleRepositoryInterface(ABC):
+
+        @abstractmethod
+        def insert_people(self, first_name: str, last_name: str, age: int, pet_id: int) -> None:
+                pass
+        
+        @abstractmethod
+        def get_person(self, person_id: int) -> PeopleTable:
+                pass
+
+  
