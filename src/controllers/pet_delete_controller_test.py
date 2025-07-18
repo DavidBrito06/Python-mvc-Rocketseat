@@ -1,4 +1,4 @@
-from src.controllers.pet_deletet_controller import PetDeleteController
+from src.controllers.pet_delete_controller import PetDeleteController
 
 def test_delete_pet(mocker):
     mock_repository = mocker.Mock()
