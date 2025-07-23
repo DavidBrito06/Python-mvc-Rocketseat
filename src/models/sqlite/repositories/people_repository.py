@@ -8,7 +8,8 @@ class PeopleRepository(PeopleRepositoryInterface):
     def __init__(self, db_connection):
         self.__db_connection = db_connection
 
-    def insert_people(self, first_name: str, last_name: str, age: int, pet_id: int) -> None:
+    def insert_person(self, first_name: str, last_name: str, age: int, pet_id: int) -> None:
+
         with self.__db_connection as database:
             try:
                 person_data = PeopleTable(

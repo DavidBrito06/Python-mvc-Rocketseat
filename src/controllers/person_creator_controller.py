@@ -27,13 +27,7 @@ class PersonCreatorController(PersonCreatorControllerInterface):
         
     
     def __insert_person_in_db(self, first_name: str, last_name: str, age: int, pet_id: int) -> None:
-        person = {
-            'first_name': first_name,
-            'last_name': last_name,
-            'age': age,
-            'pet_id': pet_id
-        }
-        self.__people_repository.insert_person(person)
+        self.__people_repository.insert_person(first_name, last_name, age, pet_id)
 
     
     def __format_response(self, person_info: Dict) -> Dict:
